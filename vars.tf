@@ -4,11 +4,23 @@ variable "region" {
 
 variable "az" {
   type = list(string)
-  default = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
+  default = ["ap-southeast-3a", "ap-southeast-3b", "ap-southeast-3c"]
 }
 
-variable "vpc_cidr" {
-  default = "10.20.22.0/25"
+variable "cidr_vpc" {
+  default = "10.20.0.0/16"
+}
+
+variable "cidr_pub_subnet" {
+  default = "10.20.0.0/24"
+}
+
+variable "cidr_priv_subnet1" {
+  default = "10.20.1.0/24"
+}
+
+variable "cidr_priv_subnet2" {
+  default = "10.20.2.0/24"
 }
 
 variable "aws_access_key" {

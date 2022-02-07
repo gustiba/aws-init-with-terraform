@@ -1,6 +1,6 @@
 #1. CREATE VPC
 resource "aws_vpc" "vpc-customer" {
-  cidr_block       = "10.20.0.0/16"
+  cidr_block       = var.cidr_vpc
  #cidr_block       = "10.20.22.0/24"
 
   tags = {
@@ -11,7 +11,7 @@ resource "aws_vpc" "vpc-customer" {
 #2. CREATE SUBNET
 resource "aws_subnet" "public-customer-1" {
   vpc_id     = aws_vpc.vpc-customer.id
-  cidr_block = "10.20.0.0/24"
+  cidr_block = var.cidr_pub_subnet
 
   tags = {
     Name = "public-customer-1"
@@ -20,7 +20,7 @@ resource "aws_subnet" "public-customer-1" {
 
 resource "aws_subnet" "private-customer-1" {
   vpc_id     = aws_vpc.vpc-customer.id
-  cidr_block = "10.20.1.0/24"
+  cidr_block = var.cidr_priv_subnet1
 
   tags = {
     Name = "private-customer-1"
@@ -29,7 +29,7 @@ resource "aws_subnet" "private-customer-1" {
 
 resource "aws_subnet" "private-customer-2" {
   vpc_id     = aws_vpc.vpc-customer.id
-  cidr_block = "10.20.2.0/24"
+  cidr_block = var.cidr_priv_subnet2
 
   tags = {
     Name = "private-customer-1"
