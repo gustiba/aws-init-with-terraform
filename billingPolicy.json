@@ -20,7 +20,8 @@
                 "cur:PutReportDefinition",
                 "cur:ModifyReportDefinition",
                 "cur:DeleteReportDefinition",
-                "purchase-orders:*PurchaseOrders"
+                "purchase-orders:*PurchaseOrders",
+                "iam:ChangePassword"
             ],
             "Resource": "*"
         }
