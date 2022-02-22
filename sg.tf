@@ -18,6 +18,7 @@ resource "aws_security_group_rule" "ingress-rules" {
   security_group_id = aws_security_group.sg-base.id
 }
 
+// THIS IS OUTBOUND RULES TO OPEN ACCESS FROM ANYWHERE
 resource "aws_security_group_rule" "egress-rules" {
   type              = "egress"
   from_port         = 0

@@ -12,6 +12,7 @@ resource "aws_vpc" "vpc-customer" {
 resource "aws_subnet" "public-customer-1" {
   vpc_id     = aws_vpc.vpc-customer.id
   cidr_block = var.cidr_pub_subnet
+  availability_zone = "${element(var.az,0)}"
 
   tags = {
     Name = "public-customer-1"
@@ -21,6 +22,7 @@ resource "aws_subnet" "public-customer-1" {
 resource "aws_subnet" "private-customer-1" {
   vpc_id     = aws_vpc.vpc-customer.id
   cidr_block = var.cidr_priv_subnet1
+  availability_zone = "${element(var.az,1)}"
 
   tags = {
     Name = "private-customer-1"
@@ -30,9 +32,10 @@ resource "aws_subnet" "private-customer-1" {
 resource "aws_subnet" "private-customer-2" {
   vpc_id     = aws_vpc.vpc-customer.id
   cidr_block = var.cidr_priv_subnet2
+  availability_zone = "${element(var.az,2)}"
 
   tags = {
-    Name = "private-customer-1"
+    Name = "private-customer-2"
   }
 }
 
