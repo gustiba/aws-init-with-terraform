@@ -5,6 +5,8 @@ public.gpg
 .tfstate
 .gpg
 *.gpg
+.asc
+*.asc
 .deb
 terraform
 *a/

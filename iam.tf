@@ -1,5 +1,5 @@
 data "local_file" "pgp_key" {
-  filename = "public-key-binary.gpg"
+  filename = "./new_public_key.asc"
 }
 
 resource "aws_iam_user" "user-berca" {
@@ -47,7 +47,7 @@ resource "aws_iam_user_login_profile" "user-console" {
   count = "${length(var.username)}"
   user    = aws_iam_user.user-berca[count.index].name
   password_reset_required = false
-  pgp_key = "keybase:gustiba"
+  pgp_key = "keybase:gustibz"
   //pgp_key = data.local_file.pgp_key.content_base64
 }
 
